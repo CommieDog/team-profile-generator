@@ -8,7 +8,7 @@ describe("Testing Engineer class", () =>
         {
             const engineerGithub = "Engiemann"
 
-            const engineer = new Engineer("John", 0, "john@email.com", engineerGithub);
+            const engineer = new Engineer("John", "john@email.com", engineerGithub);
 
             expect(engineer.github).toEqual(engineerGithub);
         })
@@ -20,7 +20,7 @@ describe("Testing Engineer class", () =>
         {
             const engineerGithub = "Engiemann"
 
-            const engineer = new Engineer("John", 0, "john@email.com", engineerGithub);
+            const engineer = new Engineer("John", "john@email.com", engineerGithub);
 
             expect(engineer.getGithub()).toEqual(engineerGithub);
         }),
@@ -29,7 +29,7 @@ describe("Testing Engineer class", () =>
         {
             const engineerRole = "Engineer"
 
-            const engineer = new Engineer("John", 0, "john@email.com", "Engiemann");
+            const engineer = new Engineer("John", "john@email.com", "Engiemann");
 
             expect(engineer.getRole()).toEqual(engineerRole);
         })

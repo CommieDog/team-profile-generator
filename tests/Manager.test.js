@@ -8,7 +8,7 @@ describe("Testing Manager class", () =>
         {
             const managerOfficeNumber = 201
 
-            const manager = new Manager("John", 0, "john@email.com", managerOfficeNumber);
+            const manager = new Manager("John", "john@email.com", managerOfficeNumber);
 
             expect(manager.officeNumber).toEqual(managerOfficeNumber);
         })
@@ -20,7 +20,7 @@ describe("Testing Manager class", () =>
         {
             const managerOfficeNumber = 201
 
-            const manager = new Manager("John", 0, "john@email.com", managerOfficeNumber);
+            const manager = new Manager("John", "john@email.com", managerOfficeNumber);
 
             expect(manager.getOfficeNumber()).toEqual(managerOfficeNumber);
         }),
@@ -29,7 +29,7 @@ describe("Testing Manager class", () =>
         {
             const managerRole = "Manager"
 
-            const manager = new Manager("John", 0, "john@email.com", 201);
+            const manager = new Manager("John", "john@email.com", 201);
 
             expect(manager.getRole()).toEqual(managerRole);
         })

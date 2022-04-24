@@ -8,15 +8,15 @@ describe("Testing Employee class", () =>
         {
             const employeeName = "John"
 
-            const employee = new Employee(employeeName, 0, "me@me.com");
+            const employee = new Employee(employeeName, "me@me.com");
 
             expect(employee.name).toEqual(employeeName);
         }),
         
         it("Id should be set automatically to unique number on construction", () =>
         {
-            const employee1 = new Employee("John", 0, "me@me.com");
-            const employee2 = new Employee("Paul", 0, "notme@me.com");
+            const employee1 = new Employee("John", "me@me.com");
+            const employee2 = new Employee("Paul", "notme@me.com");
 
             expect(employee1.id).not.toEqual(employee2.id);
         }),
@@ -25,7 +25,7 @@ describe("Testing Employee class", () =>
         {
             const employeeEmail = "john@email.com"
 
-            const employee = new Employee("John", 0, employeeEmail);
+            const employee = new Employee("John", employeeEmail);
 
             expect(employee.email).toEqual(employeeEmail);
         })
@@ -37,14 +37,14 @@ describe("Testing Employee class", () =>
         {
             const employeeName = "John"
 
-            const employee = new Employee(employeeName, 0, "me@me.com");
+            const employee = new Employee(employeeName, "me@me.com");
 
             expect(employee.getName()).toEqual(employeeName);
         }),
         
         it("getId() should return the employee's name", () =>
         {
-            const employee = new Employee("John", 0, "me@me.com");
+            const employee = new Employee("John", "me@me.com");
 
             expect(employee.getId()).toEqual(employee.id);
         }),
@@ -53,7 +53,7 @@ describe("Testing Employee class", () =>
         {
             const employeeEmail = "john@email.com"
 
-            const employee = new Employee("John", 0, employeeEmail);
+            const employee = new Employee("John", employeeEmail);
 
             expect(employee.getEmail()).toEqual(employeeEmail);
         }),
@@ -62,7 +62,7 @@ describe("Testing Employee class", () =>
         {
             const employeeRole = "Employee"
 
-            const employee = new Employee("John", 0, "me@me.com");
+            const employee = new Employee("John", "me@me.com");
 
             expect(employee.getRole()).toEqual(employeeRole);
         })
