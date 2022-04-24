@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const Engineer = require("./lib/engineer");
+const Intern = require("./lib/intern");
 const Manager = require("./lib/manager");
 
 const team = [];
@@ -40,6 +41,24 @@ const engineerQuestions = [
         message: "What is this engineer's Github profile?"
     }
 ];
+const internQuestions = [
+    {
+        name: "internName",
+        message: "What is this intern's name?"
+    },
+    {
+        name: "internId",
+        message: "What is this intern's employee ID?"
+    },
+    {
+        name: "internEmail",
+        message: "What is this intern's email address?"
+    },
+    {
+        name: "internSchool",
+        message: "What is this intern's school?"
+    }
+];
 
 function promptForManager()
 {
@@ -52,7 +71,7 @@ function promptForManager()
             {
                 resolve();
             };
-            resolve();
+            //resolve();
         })
     });
 }
@@ -64,6 +83,21 @@ function promptForEngineer()
         inquirer.prompt(engineerQuestions).then((answers) =>
         {
             team.push(new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub));
+            promptForNextEmployee().then()
+            {
+                resolve();
+            };
+        })
+    });
+}
+
+function promptForIntern()
+{
+    return new Promise((resolve, reject) =>
+    {
+        inquirer.prompt(internQuestions).then((answers) =>
+        {
+            team.push(new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool));
             promptForNextEmployee().then()
             {
                 resolve();
@@ -90,12 +124,9 @@ function promptForNextEmployee()
             switch(answers.nextAction)
             {
                 case "Add an engineer":
-                    console.log("Add an engineer");
                     return promptForEngineer();
                 case "Add an intern":
-                    console.log("Add an intern");
-                    resolve();
-                    break;
+                    return promptForIntern();
                 default:
                     console.log("Done!");
                     console.log(team);
@@ -106,30 +137,4 @@ function promptForNextEmployee()
 }
 
 console.log("Welcome to the team profile generator!");
-promptForManager().then(() =>
-{
-    //let managerAnswers = answers;
-    /*inquirer.prompt(
-        [
-            {
-                type: "list",
-                name: "nextAction",
-                message: "What you you like to do next?",
-                choices: ["Add an engineer", "Add an intern", "Finish and generate profile"]
-            }
-        ]
-    ).then((answers) => 
-    {
-        switch(answers.nextAction)
-        {
-            case "Add an engineer":
-                promptForEngineer();
-                break;
-            case "Add an intern":
-                console.log("Add an intern");
-                break;
-        }
-    })*/
-    //console.log("Done!");
-    //console.log(team);
-});
+promptForManager();
