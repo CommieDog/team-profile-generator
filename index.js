@@ -22,5 +22,27 @@ inquirer.prompt(
     ]
 ).then((answers) =>
 {
-    console.log(answers);
+    let managerAnswers = answers;
+    inquirer.prompt(
+        [
+            {
+                type: "list",
+                name: "nextAction",
+                message: "What you you like to do next?",
+                choices: ["Add an engineer", "Add an intern", "finish and generate profile"]
+            }
+        ]
+    ).then((answers) => 
+    {
+        switch(answers.nextAction)
+        {
+            case "Add an engineer":
+                console.log("Add an engineer");
+                break;
+            case "Add an intern":
+                console.log("Add an intern");
+                break;
+        }
+    console.log(managerAnswers);
+    })
 })
