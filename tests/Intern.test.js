@@ -22,7 +22,7 @@ describe("Testing Intern class", () =>
 
             const intern = new Intern("John", 0, "john@email.com", internSchool);
 
-            expect(intern.getOfficeNumber()).toEqual(internSchool);
+            expect(intern.getSchool()).toEqual(internSchool);
         }),
         
         it("getRole() should return the 'Intern' role", () =>
