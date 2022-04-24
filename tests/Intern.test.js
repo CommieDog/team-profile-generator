@@ -8,7 +8,7 @@ describe("Testing Intern class", () =>
         {
             const internSchool = "Party Hard U";
 
-            const intern = new Intern("John", 0, "john@email.com", internSchool);
+            const intern = new Intern("John", "john@email.com", internSchool);
 
             expect(intern.school).toEqual(internSchool);
         })
@@ -20,16 +20,16 @@ describe("Testing Intern class", () =>
         {
             const internSchool = "Party Hard U";
 
-            const intern = new Intern("John", 0, "john@email.com", internSchool);
+            const intern = new Intern("John", "john@email.com", internSchool);
 
-            expect(intern.getOfficeNumber()).toEqual(internSchool);
+            expect(intern.getSchool()).toEqual(internSchool);
         }),
         
         it("getRole() should return the 'Intern' role", () =>
         {
             const internRole = "Intern";
 
-            const intern = new Intern("John", 0, "john@email.com", "Party Hard U");
+            const intern = new Intern("John", "john@email.com", "Party Hard U");
 
             expect(intern.getRole()).toEqual(internRole);
         })
