@@ -1,4 +1,6 @@
 const inquirer = require("inquirer");
+const writeHtmlFile = require("./src/writer") 
+
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const Manager = require("./lib/manager");
@@ -128,8 +130,7 @@ function promptForNextEmployee()
                 case "Add an intern":
                     return promptForIntern();
                 default:
-                    console.log("Done!");
-                    console.log(team);
+                    writeHtmlFile(team);
                     resolve();
             }
         })
