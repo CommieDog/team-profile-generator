@@ -62,6 +62,10 @@ const internQuestions = [
     }
 ];
 
+/**
+ * Prompts the user to input info on the team's manager
+ * @returns a Promise object that is resolved once all the subsequent team data is entered
+ */
 function promptForManager()
 {
     return new Promise((resolve, reject) =>
@@ -78,6 +82,10 @@ function promptForManager()
     });
 }
 
+/**
+ * Prompts the user to input info on an engineer for the team
+ * @returns a Promise object that is resolved once all the subsequent team data is entered
+ */
 function promptForEngineer()
 {
     return new Promise((resolve, reject) =>
@@ -93,6 +101,10 @@ function promptForEngineer()
     });
 }
 
+/**
+ * Prompts the user to input info on an intern for the team
+ * @returns a Promise object that is resolved once all the subsequent team data is entered
+ */
 function promptForIntern()
 {
     return new Promise((resolve, reject) =>
@@ -108,6 +120,10 @@ function promptForIntern()
     });
 }
 
+/**
+ * Prompts the user whether to input the data for another employee or not
+ * @returns a Promise object that is resolved once all the team data is entered
+ */
 function promptForNextEmployee()
 {
     return new Promise((resolve, reject) =>
@@ -131,7 +147,7 @@ function promptForNextEmployee()
                     return promptForIntern();
                 default:
                     writeHtmlFile(team);
-                    resolve();
+                    resolve(); // Resolution of all promises occurs here
             }
         })
     })

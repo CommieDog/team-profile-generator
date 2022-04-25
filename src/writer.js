@@ -4,6 +4,11 @@ const Engineer = require("../lib/engineer");
 const Intern = require("../lib/intern");
 const Manager = require("../lib/manager");
 
+/**
+ * Creates the HTML-formatted string for the generated HTML webpage output file
+ * @param {*} team the team data to use in the webpage
+ * @returns the HTML content of the webpage
+ */
 function writeHtmlContent(team)
 {
     return `<!DOCTYPE html>
@@ -28,6 +33,11 @@ ${writeHtmlTeam(team)}        </main>
 </html>`
 }
 
+/**
+ * Creates the team member-specific portion of the HTML formatted string for the generated HTML webpage output file
+ * @param {*} team the team data to use in the webpage
+ * @returns the team-member specific HTML content of the webpage
+ */
 function writeHtmlTeam(team)
 {
     let teamMembersHtmlString = "";
@@ -40,6 +50,11 @@ function writeHtmlTeam(team)
     return teamMembersHtmlString;
 }
 
+/**
+ * Creates a team member-specific section of the HTML formatted string for the generated HTML webpage output file
+ * @param {*} team the team member data to use in the webpage
+ * @returns the team-member specific HTML content of the webpage
+ */
 function writeHtmlTeamMember(teamMember)
 {
     if(teamMember instanceof Manager)
@@ -92,6 +107,10 @@ function writeHtmlTeamMember(teamMember)
     }
 }
 
+/**
+ * Writes an HTML file consisting of the generated team profile in HTML format
+ * @param {*} team the team data to use in the webpage
+ */
 function writeHtmlFile(team)
 {
     console.log("Generating file for team...");
