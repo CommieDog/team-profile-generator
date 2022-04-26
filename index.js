@@ -1,4 +1,6 @@
 const inquirer = require("inquirer");
+const writeHtmlFile = require("./src/writer") 
+
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const Manager = require("./lib/manager");
@@ -60,6 +62,10 @@ const internQuestions = [
     }
 ];
 
+/**
+ * Prompts the user to input info on the team's manager
+ * @returns a Promise object that is resolved once all the subsequent team data is entered
+ */
 function promptForManager()
 {
     return new Promise((resolve, reject) =>
@@ -76,6 +82,10 @@ function promptForManager()
     });
 }
 
+/**
+ * Prompts the user to input info on an engineer for the team
+ * @returns a Promise object that is resolved once all the subsequent team data is entered
+ */
 function promptForEngineer()
 {
     return new Promise((resolve, reject) =>
@@ -91,6 +101,10 @@ function promptForEngineer()
     });
 }
 
+/**
+ * Prompts the user to input info on an intern for the team
+ * @returns a Promise object that is resolved once all the subsequent team data is entered
+ */
 function promptForIntern()
 {
     return new Promise((resolve, reject) =>
@@ -106,6 +120,10 @@ function promptForIntern()
     });
 }
 
+/**
+ * Prompts the user whether to input the data for another employee or not
+ * @returns a Promise object that is resolved once all the team data is entered
+ */
 function promptForNextEmployee()
 {
     return new Promise((resolve, reject) =>
@@ -128,9 +146,8 @@ function promptForNextEmployee()
                 case "Add an intern":
                     return promptForIntern();
                 default:
-                    console.log("Done!");
-                    console.log(team);
-                    resolve();
+                    writeHtmlFile(team);
+                    resolve(); // Resolution of all promises occurs here
             }
         })
     })
