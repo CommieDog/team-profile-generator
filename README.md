@@ -7,7 +7,7 @@ The Team Profile Generator is a Node.js command line application for building de
 
 [Video of Team Profile Generator showing typical use case](https://drive.google.com/file/d/1qGDqRc18LTD__IcQv3e5-l_J0VGK44ae/view)
 
-![Screenshot of sample webpage generated](https://github.com/CommieDog/team-profile-generator/blob/main/assets/images/readme/sample-readme-screenshot.jpg)
+![Screenshot of sample webpage generated](https://github.com/CommieDog/team-profile-generator/blob/main/assets/images/readme/sample-team-webpage-screenshot.jpg)
 Screenshot of sample readme generated
 
 
